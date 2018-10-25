@@ -83,7 +83,7 @@ module RogueSide {
 			this.lighting.update();
 		}
 
-		render() {
+		postRender() {
     	if (this.debug) {
 
     		this.game.debug.cameraInfo(this.camera, 64, 16);
@@ -99,10 +99,25 @@ module RogueSide {
 		  }
 
       this.game.debug.text(this.game.time.fps+"" || '--', 2, 14, "#00ff00");   
-			// for (let i of this.enemiesGroup.children) {
-	  //   	this.game.debug.spriteBounds(i);
-			// }
+			for (let i of this.enemiesGroup.children) {
+				this.game.debug.spriteBounds(i);
+			}
 		}
 
+		playerAttack(x: number, y: number, width: number, height: number, facing: boolean, damage: number) {
+			if (this.debug) {
+				let attack = new Phaser.Sprite(this.game, x, y, "debug");
+				attack.scale.set(width, height);
+				attack.alpha = 0.5;
+				this.game.add.existing(attack);
+				setTimeout(() => attack.destroy(), 100);
+			}
+
+			let bound = new Phaser.Rectangle(x, y, width, height);
+			for (let i of this.enemiesGroup.children) {
+				//@ts-ignore
+				i.playerAttack(bound, 5);
+			}
+		}
 	}
 }

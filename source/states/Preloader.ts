@@ -28,6 +28,7 @@ module RogueSide {
 			this.load.image('room_shadow_overlay', 'assets/room_shadow_overlay.png');
 			this.load.image('glow_overlay', 'assets/glow_overlay.png');
 			this.load.image('dungeon_torch', 'assets/torch.png');
+			this.load.image('debug', 'assets/debug.png');
 		}
 
 		create() {

@@ -7,6 +7,7 @@ module RogueSide {
 		raw: {x: number, y: number};
 		vel: {x: number, y: number};
 		hitbox: Phaser.Rectangle;
+		invulnerabilityTimer: number;
 
 		constructor(room: DungeonRoom, x: number, y: number, sprite: string) {
 			super(room.game, room.x + x, room.y + y, sprite);
@@ -15,6 +16,7 @@ module RogueSide {
 			this.scale.set(6, 6);
 			this.anchor.set(0.5, 0);
 			this.active = false;
+			this.invulnerabilityTimer = -1;
 
 			this.raw = {x: this.x, y: this.y};
 			this.vel = {x: 0, y: 0};
@@ -30,13 +32,22 @@ module RogueSide {
 
 		updateEnemy() {
 			this.position.set(Math.round(this.raw.x/6)*6, Math.round(this.raw.y/6)*6);
+			
 			if (this.health <= 0) {
 				this.destroy();
+			}
+
+			if (this.invulnerabilityTimer >= 0) {
+				if (this.invulnerabilityTimer < 5) this.tint = 0xff0000;
+				else this.tint = 0xffffff;
+
+				this.invulnerabilityTimer++;
+				if (this.invulnerabilityTimer >= 15) this.invulnerabilityTimer = -1;
 			}
 		}
 
 		getHitbox(): Phaser.Rectangle {
-			return new Phaser.Rectangle(this.hitbox.x*6 + this.getBounds().x, this.hitbox.y*6  + this.getBounds().y, this.hitbox.width*6, this.hitbox.height*6);
+			return new Phaser.Rectangle(this.hitbox.x*6 + this.world.x, this.hitbox.y*6  + this.world.y, this.hitbox.width*6, this.hitbox.height*6);
 		}
 
 		tryHitPlayer() {
@@ -46,6 +57,15 @@ module RogueSide {
 				return true;
 			}
 			return false;
+		}
+
+		playerAttack(bounds: Phaser.Rectangle, damage: number) {
+			// if (this.y - this.state.player.y < 100) console.log(bounds, this.getHitbox());
+			if (Phaser.Rectangle.intersects(bounds, this.getHitbox()) && this.invulnerabilityTimer == -1) {
+				console.log('attacked for ' + damage);
+				this.health -= damage;
+				this.invulnerabilityTimer = 0;
+			}
 		}
 
 		checkIfFree(x: number, y: number) {

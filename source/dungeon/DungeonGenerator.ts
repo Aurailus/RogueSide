@@ -36,45 +36,45 @@ module RogueSide {
 				this.rooms[i] = inner;
 			}
 
-			let startX = Math.round(Math.random()*this.ROOM_X_BOUNDS);
-			let startRoom = new RoomConfig(startX, 0);
-			startRoom.start = true;
-			this.addRoom(startRoom);
+			// let startX = Math.round(Math.random()*this.ROOM_X_BOUNDS);
+			// let startRoom = new RoomConfig(startX, 0);
+			// startRoom.start = true;
+			// this.addRoom(startRoom);
 
-			let endY = this.ROOM_Y_BOUNDS / 2 + Math.round(Math.random()*(this.ROOM_Y_BOUNDS/2-2));
+			// let endY = this.ROOM_Y_BOUNDS / 2 + Math.round(Math.random()*(this.ROOM_Y_BOUNDS/2-2));
 			
-			let xLeft = startX;
-			let xRight = startX;
+			// let xLeft = startX;
+			// let xRight = startX;
 
-			for (var i = 1; i < endY; i++) {
-				let coords = this.generateRow(xLeft, xRight, i);
-				xLeft = coords[0];
-				xRight = coords[1];
-			}
+			// for (var i = 1; i < endY; i++) {
+			// 	let coords = this.generateRow(xLeft, xRight, i);
+			// 	xLeft = coords[0];
+			// 	xRight = coords[1];
+			// }
 
-			let endX = xLeft + Math.round(Math.random() * (xRight - xLeft));
-			let endRoom = new RoomConfig(endX, endY);
-			endRoom.end = true;
-			endRoom.ladderUp = true;
-			this.rooms[endY-1][endX].ladderDown = true;
-			this.addRoom(endRoom);
+			// let endX = xLeft + Math.round(Math.random() * (xRight - xLeft));
+			// let endRoom = new RoomConfig(endX, endY);
+			// endRoom.end = true;
+			// endRoom.ladderUp = true;
+			// this.rooms[endY-1][endX].ladderDown = true;
+			// this.addRoom(endRoom);
 			
-			// let room0 = new RoomConfig(4, 0);
-			// this.addRoom(room0);
+			let room0 = new RoomConfig(4, 0);
+			this.addRoom(room0);
 			
-			// let room1 = new RoomConfig(5, 0);
-			// room1.start = true;
-			// room1.hasDoorLeft = true;
-			// this.addRoom(room1);
+			let room1 = new RoomConfig(5, 0);
+			room1.start = true;
+			room1.hasDoorLeft = true;
+			this.addRoom(room1);
 
-			// let room2 = new RoomConfig(6, 0);
-			// room2.end = true;
-			// room2.hasDoorLeft = true;
-			// this.addRoom(room2);
+			let room2 = new RoomConfig(6, 0);
+			room2.end = true;
+			room2.hasDoorLeft = true;
+			this.addRoom(room2);
 			
-			// let room3 = new RoomConfig(5, 1);
-			// room3.ladderUp = true;
-			// this.addRoom(room3);
+			let room3 = new RoomConfig(5, 1);
+			room3.ladderUp = true;
+			this.addRoom(room3);
 
 			return this.rooms;
 		}

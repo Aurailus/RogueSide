@@ -67,14 +67,14 @@ var RogueSide;
                 this.glowSprite.scale.set(scale, scale);
                 this.glowSprite.alpha = alpha;
                 this.bmd.draw(this.glowSprite, (spr.world.x / 6) - baseX, (spr.world.y / 6) + (spr.getBounds().halfHeight / 6) - baseY, this.glowSprite.width, this.glowSprite.height);
-                this.glowSprite.scale.set(1.5, 1.5);
-                this.glowSprite.alpha = 0.3;
+                this.glowSprite.scale.set(1.2, 1.2);
+                this.glowSprite.alpha = 0.2;
                 this.bmd.draw(this.glowSprite, (spr.world.x / 6) - baseX, (spr.world.y / 6) + (spr.getBounds().halfHeight / 6) - baseY, this.glowSprite.width, this.glowSprite.height);
             }
         }
         drawRoomRegion(room, baseX, baseY) {
             if (room.accessed) {
-                let alpha = Math.min(1, room.accessedTime / 20) * 0.3;
+                let alpha = Math.min(1, room.accessedTime / 20) * 0.2;
                 this.roomSprite.alpha = alpha;
                 this.bmd.draw(this.roomSprite, (room.x / 6) - baseX - 4, (room.y / 6) - baseY - 4, 200, 88);
             }
@@ -195,9 +195,12 @@ var RogueSide;
                 this.raw.y += this.velocity.y;
                 this.position.set(Math.round(this.raw.x / 6) * 6, Math.round(this.raw.y / 6) * 6);
             }
+            if (this.attackTime >= 0 && this.attackTime < 10) {
+                this.state.playerAttack(this.x + this.width * 0.3 - (this.facingRight ? 0 : 80), this.y, 80, 100, this.facingRight, 5);
+            }
         }
         getHitbox() {
-            return new Phaser.Rectangle(this.hitbox.x * 6 + this.getBounds().x, this.hitbox.y * 6 + this.getBounds().y, this.hitbox.width * 6, this.hitbox.height * 6);
+            return new Phaser.Rectangle(this.hitbox.x * 6 + this.world.x, this.hitbox.y * 6 + this.world.y, this.hitbox.width * 6, this.hitbox.height * 6);
         }
         checkIfFree(x, y) {
             if (y % (96 * 6) > 50 * 6)
@@ -279,37 +282,37 @@ var RogueSide;
                 }
                 this.rooms[i] = inner;
             }
-            let startX = Math.round(Math.random() * this.ROOM_X_BOUNDS);
-            let startRoom = new RogueSide.RoomConfig(startX, 0);
-            startRoom.start = true;
-            this.addRoom(startRoom);
-            let endY = this.ROOM_Y_BOUNDS / 2 + Math.round(Math.random() * (this.ROOM_Y_BOUNDS / 2 - 2));
-            let xLeft = startX;
-            let xRight = startX;
-            for (var i = 1; i < endY; i++) {
-                let coords = this.generateRow(xLeft, xRight, i);
-                xLeft = coords[0];
-                xRight = coords[1];
-            }
-            let endX = xLeft + Math.round(Math.random() * (xRight - xLeft));
-            let endRoom = new RogueSide.RoomConfig(endX, endY);
-            endRoom.end = true;
-            endRoom.ladderUp = true;
-            this.rooms[endY - 1][endX].ladderDown = true;
-            this.addRoom(endRoom);
-            // let room0 = new RoomConfig(4, 0);
-            // this.addRoom(room0);
-            // let room1 = new RoomConfig(5, 0);
-            // room1.start = true;
-            // room1.hasDoorLeft = true;
-            // this.addRoom(room1);
-            // let room2 = new RoomConfig(6, 0);
-            // room2.end = true;
-            // room2.hasDoorLeft = true;
-            // this.addRoom(room2);
-            // let room3 = new RoomConfig(5, 1);
-            // room3.ladderUp = true;
-            // this.addRoom(room3);
+            // let startX = Math.round(Math.random()*this.ROOM_X_BOUNDS);
+            // let startRoom = new RoomConfig(startX, 0);
+            // startRoom.start = true;
+            // this.addRoom(startRoom);
+            // let endY = this.ROOM_Y_BOUNDS / 2 + Math.round(Math.random()*(this.ROOM_Y_BOUNDS/2-2));
+            // let xLeft = startX;
+            // let xRight = startX;
+            // for (var i = 1; i < endY; i++) {
+            // 	let coords = this.generateRow(xLeft, xRight, i);
+            // 	xLeft = coords[0];
+            // 	xRight = coords[1];
+            // }
+            // let endX = xLeft + Math.round(Math.random() * (xRight - xLeft));
+            // let endRoom = new RoomConfig(endX, endY);
+            // endRoom.end = true;
+            // endRoom.ladderUp = true;
+            // this.rooms[endY-1][endX].ladderDown = true;
+            // this.addRoom(endRoom);
+            let room0 = new RogueSide.RoomConfig(4, 0);
+            this.addRoom(room0);
+            let room1 = new RogueSide.RoomConfig(5, 0);
+            room1.start = true;
+            room1.hasDoorLeft = true;
+            this.addRoom(room1);
+            let room2 = new RogueSide.RoomConfig(6, 0);
+            room2.end = true;
+            room2.hasDoorLeft = true;
+            this.addRoom(room2);
+            let room3 = new RogueSide.RoomConfig(5, 1);
+            room3.ladderUp = true;
+            this.addRoom(room3);
             return this.rooms;
         }
         addRoom(room) {
@@ -395,6 +398,8 @@ var RogueSide;
             }
             this.game.add.existing(this);
             state.roomsGroup.add(this);
+            if (this.accessed)
+                this.activate();
         }
         enableEnemies() {
             for (let i of this.enemies) {
@@ -406,14 +411,8 @@ var RogueSide;
             this.state.enemiesGroup.add(enemy);
         }
         addDecorations() {
-            let torch = new Phaser.Sprite(this.game, 40, 25, "dungeon_torch");
-            torch.anchor.x = 0.5;
-            this.state.lightEmitters.push(torch);
-            this.addChild(torch);
-            torch = new Phaser.Sprite(this.game, 150, 25, "dungeon_torch");
-            torch.anchor.x = 0.5;
-            this.state.lightEmitters.push(torch);
-            this.addChild(torch);
+            new RogueSide.DungeonTorch(this, 40, 25);
+            new RogueSide.DungeonTorch(this, 150, 25);
         }
         populate() {
             for (let i = 0; i < 1 + Math.round(Math.random() * 3); i++) {
@@ -426,23 +425,32 @@ var RogueSide;
                     this.addEnemy(new RogueSide.SlimeBaby(this, 20 * 6 + Math.round(Math.random() * 80) * 6, 50 * 6));
             }
         }
-        doorOpened() {
+        activate() {
             this.accessed = true;
+            this.enableEnemies();
+            this.enableTorches();
+        }
+        enableTorches() {
+            for (let i of this.children) {
+                if (i.constructor == RogueSide.DungeonTorch) {
+                    //@ts-ignore
+                    i.activate();
+                }
+            }
+        }
+        doorOpened() {
+            this.activate();
             let room = this.state.roomsMap[this.config.roomY][this.config.roomX - 1];
             if (room != null) {
-                room.accessed = true;
-                room.enableEnemies();
+                room.activate();
             }
-            this.enableEnemies();
         }
         ladderTravelled() {
-            this.accessed = true;
+            this.activate();
             let room = this.state.roomsMap[this.config.roomY - 1][this.config.roomY];
             if (room != null) {
-                room.accessed = true;
-                room.enableEnemies();
+                room.activate();
             }
-            this.enableEnemies();
         }
         update() {
             if (this.door != null)
@@ -454,6 +462,26 @@ var RogueSide;
         }
     }
     RogueSide.DungeonRoom = DungeonRoom;
+})(RogueSide || (RogueSide = {}));
+var RogueSide;
+(function (RogueSide) {
+    class DungeonTorch extends Phaser.Sprite {
+        constructor(room, x, y) {
+            super(room.game, x, y, "dungeon_torch");
+            this.light_opacity = 0.5;
+            this.light_scale = 0.7;
+            this.room = room;
+            this.anchor.x = 0.5;
+            this.room.state.lightEmitters.push(this);
+            this.game.add.existing(this);
+            this.room.addChild(this);
+        }
+        activate() {
+            this.light_opacity = 1;
+            this.light_scale = 1;
+        }
+    }
+    RogueSide.DungeonTorch = DungeonTorch;
 })(RogueSide || (RogueSide = {}));
 var RogueSide;
 (function (RogueSide) {
@@ -479,6 +507,7 @@ var RogueSide;
             this.scale.set(6, 6);
             this.anchor.set(0.5, 0);
             this.active = false;
+            this.invulnerabilityTimer = -1;
             this.raw = { x: this.x, y: this.y };
             this.vel = { x: 0, y: 0 };
             this.facingRight = Math.random() > 0.5;
@@ -493,9 +522,18 @@ var RogueSide;
             if (this.health <= 0) {
                 this.destroy();
             }
+            if (this.invulnerabilityTimer >= 0) {
+                if (this.invulnerabilityTimer < 5)
+                    this.tint = 0xff0000;
+                else
+                    this.tint = 0xffffff;
+                this.invulnerabilityTimer++;
+                if (this.invulnerabilityTimer >= 15)
+                    this.invulnerabilityTimer = -1;
+            }
         }
         getHitbox() {
-            return new Phaser.Rectangle(this.hitbox.x * 6 + this.getBounds().x, this.hitbox.y * 6 + this.getBounds().y, this.hitbox.width * 6, this.hitbox.height * 6);
+            return new Phaser.Rectangle(this.hitbox.x * 6 + this.world.x, this.hitbox.y * 6 + this.world.y, this.hitbox.width * 6, this.hitbox.height * 6);
         }
         tryHitPlayer() {
             //@ts-ignore
@@ -504,6 +542,14 @@ var RogueSide;
                 return true;
             }
             return false;
+        }
+        playerAttack(bounds, damage) {
+            // if (this.y - this.state.player.y < 100) console.log(bounds, this.getHitbox());
+            if (Phaser.Rectangle.intersects(bounds, this.getHitbox()) && this.invulnerabilityTimer == -1) {
+                console.log('attacked for ' + damage);
+                this.health -= damage;
+                this.invulnerabilityTimer = 0;
+            }
         }
         checkIfFree(x, y) {
             if (y % (96 * 6) > 50 * 6)
@@ -533,7 +579,7 @@ var RogueSide;
             this.speed = 0.85 + Math.random() * 0.15;
             this.jumping = false;
             this.hitInJump = false;
-            this.health = 5;
+            this.health = 15;
             this.hitbox = new Phaser.Rectangle(2, 10, 12, 6);
             this.animations.add("move", [2, 3], 12);
         }
@@ -608,8 +654,10 @@ var RogueSide;
         }
         tryHitKamikazi() {
             let hit = this.tryHitPlayer();
-            if (hit && Math.random() > 0.70)
+            if (hit && Math.random() > 0.70) {
                 this.health -= 5;
+                this.invulnerabilityTimer = 0;
+            }
             return hit;
         }
     }
@@ -625,7 +673,7 @@ var RogueSide;
             this.speed = 0.85 + Math.random() * 0.15;
             this.jumping = false;
             this.hitInJump = false;
-            this.health = 5;
+            this.health = 15;
             this.hitbox = new Phaser.Rectangle(2, 8, 12, 8);
             this.animations.add("move", [0, 1, 2, 3], 8);
             this.animations.add("idle", [0, 1, 2, 3], 4);
@@ -717,8 +765,10 @@ var RogueSide;
         }
         tryHitKamikazi() {
             let hit = this.tryHitPlayer();
-            if (hit && Math.random() > 0.70)
+            if (hit && Math.random() > 0.70) {
                 this.health -= 5;
+                this.invulnerabilityTimer = 0;
+            }
             return hit;
         }
     }
@@ -734,7 +784,7 @@ var RogueSide;
             this.speed = 0.85 + Math.random() * 0.15;
             this.jumping = false;
             this.hitInJump = false;
-            this.health = 5;
+            this.health = 10;
             this.hitbox = new Phaser.Rectangle(2, 8, 12, 8);
             this.animations.add("move", [4, 5, 6, 7], 12);
             this.animations.add("idle", [4, 5, 6, 7], 4);
@@ -826,8 +876,10 @@ var RogueSide;
         }
         tryHitKamikazi() {
             let hit = this.tryHitPlayer();
-            if (hit && Math.random() > 0.70)
+            if (hit && Math.random() > 0.70) {
                 this.health -= 5;
+                this.invulnerabilityTimer = 0;
+            }
             return hit;
         }
     }
@@ -932,7 +984,7 @@ var RogueSide;
             this.camera.y = this.player.y - this.camera.height / 2;
             this.lighting.update();
         }
-        render() {
+        postRender() {
             if (this.debug) {
                 this.game.debug.cameraInfo(this.camera, 64, 16);
                 this.game.debug.bodyInfo(this.player, 64, 150);
@@ -945,9 +997,23 @@ var RogueSide;
                 this.game.debug.pointer(this.game.input.pointer5);
             }
             this.game.debug.text(this.game.time.fps + "" || '--', 2, 14, "#00ff00");
-            // for (let i of this.enemiesGroup.children) {
-            //   	this.game.debug.spriteBounds(i);
-            // }
+            for (let i of this.enemiesGroup.children) {
+                this.game.debug.spriteBounds(i);
+            }
+        }
+        playerAttack(x, y, width, height, facing, damage) {
+            if (this.debug) {
+                let attack = new Phaser.Sprite(this.game, x, y, "debug");
+                attack.scale.set(width, height);
+                attack.alpha = 0.5;
+                this.game.add.existing(attack);
+                setTimeout(() => attack.destroy(), 100);
+            }
+            let bound = new Phaser.Rectangle(x, y, width, height);
+            for (let i of this.enemiesGroup.children) {
+                //@ts-ignore
+                i.playerAttack(bound, 5);
+            }
         }
     }
     RogueSide.Dungeon = Dungeon;
@@ -974,6 +1040,7 @@ var RogueSide;
             this.load.image('room_shadow_overlay', 'assets/room_shadow_overlay.png');
             this.load.image('glow_overlay', 'assets/glow_overlay.png');
             this.load.image('dungeon_torch', 'assets/torch.png');
+            this.load.image('debug', 'assets/debug.png');
         }
         create() {
             this.game.state.start('Dungeon', true, false);

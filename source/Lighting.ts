@@ -56,8 +56,8 @@ module RogueSide {
 					(spr.world.y/6) + (spr.getBounds().halfHeight/6) - baseY, 
 					this.glowSprite.width, this.glowSprite.height);
 
-				this.glowSprite.scale.set(1.5, 1.5);
-				this.glowSprite.alpha = 0.3;
+				this.glowSprite.scale.set(1.2, 1.2);
+				this.glowSprite.alpha = 0.2;
 
 				this.bmd.draw(this.glowSprite,
 					(spr.world.x/6) - baseX, 
@@ -68,7 +68,7 @@ module RogueSide {
 
 		drawRoomRegion(room: DungeonRoom, baseX: number, baseY: number) {
 			if (room.accessed) {
-				let alpha = Math.min(1, room.accessedTime/20) * 0.3;
+				let alpha = Math.min(1, room.accessedTime/20) * 0.2;
 
 				this.roomSprite.alpha = alpha;
 				this.bmd.draw(this.roomSprite, (room.x/6) - baseX - 4, (room.y/6) - baseY - 4, 200, 88);

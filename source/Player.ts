@@ -141,10 +141,14 @@ module RogueSide {
 
 				this.position.set(Math.round(this.raw.x/6)*6, Math.round(this.raw.y/6)*6);
 			}
+
+			if (this.attackTime >= 0 && this.attackTime < 10) {
+				this.state.playerAttack(this.x + this.width*0.3 - (this.facingRight ? 0 : 80), this.y, 80, 100, this.facingRight, 5);
+			}
 		}
 
 		getHitbox(): Phaser.Rectangle {
-			return new Phaser.Rectangle(this.hitbox.x*6 + this.getBounds().x, this.hitbox.y*6  + this.getBounds().y, this.hitbox.width*6, this.hitbox.height*6);
+			return new Phaser.Rectangle(this.hitbox.x*6 + this.world.x, this.hitbox.y*6  + this.world.y, this.hitbox.width*6, this.hitbox.height*6);
 		}
 
 		checkIfFree(x: number, y: number) {

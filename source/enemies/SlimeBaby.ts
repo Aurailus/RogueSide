@@ -1,5 +1,5 @@
 module RogueSide {
-	export class Slime extends Enemy {
+	export class SlimeBaby extends Enemy {
 		speed: number;
 		jumping: boolean;
 		jumpTimeout: number;
@@ -13,18 +13,18 @@ module RogueSide {
 			this.jumping = false;
 			this.hitInJump = false;
 
-			this.health = 5;
+			this.health = 10;
 			
 			this.hitbox = new Phaser.Rectangle(2, 8, 12, 8);
 
-			this.animations.add("move", [0, 1, 2, 3], 8);
-			this.animations.add("idle", [0, 1, 2, 3], 4);
+			this.animations.add("move", [4, 5, 6, 7], 12);
+			this.animations.add("idle", [4, 5, 6, 7], 4);
 		}
 
 		jump() {
 			this.jumping = true;
 			this.hitInJump = false;
-			this.vel.y = -12;
+			this.vel.y = -10;
 		}
 
 		alert() {
@@ -49,7 +49,7 @@ module RogueSide {
 						this.vel.x = this.facingRight ? 6 + (this.jumpTimeout/5) : -6 - (this.jumpTimeout/5);
 					}
 					else {
-						if (dist > 36 * 6 || (mod < 0) == this.facingRight) this.vel.x = Math.min(Math.abs(this.vel.x) + 1 * this.speed, 8)*mod;
+						if (dist > 36 * 6 || (mod < 0) == this.facingRight) this.vel.x = Math.min(Math.abs(this.vel.x) + 1 * this.speed, 6)*mod;
 						else this.jump();
 					}
 
@@ -58,7 +58,7 @@ module RogueSide {
 					}
 
 					if (!this.checkIfFree(this.raw.x, this.raw.y + 1)) {
-						this.vel.y = -4;
+						this.vel.y = -3;
 					}
 
 					let sign = (this.vel.y > 0 ? 1 : -1);
@@ -119,7 +119,10 @@ module RogueSide {
 
 		tryHitKamikazi(): boolean {
 			let hit = this.tryHitPlayer();
-			if (hit && Math.random() > 0.70) this.health -= 5;
+			if (hit && Math.random() > 0.70) {
+				this.health -= 5;
+				this.invulnerabilityTimer = 0;
+			}
 			return hit;
 		}
 	}

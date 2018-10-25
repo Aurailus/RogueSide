@@ -22,14 +22,8 @@ module RogueSide {
 		}
 
 		addDecorations() {
-			let torch = new Phaser.Sprite(this.game, 40, 25, "dungeon_torch");
-			torch.anchor.x = 0.5;
-			this.state.lightEmitters.push(torch);
-			this.addChild(torch);
-			torch = new Phaser.Sprite(this.game, 150, 25, "dungeon_torch");
-			torch.anchor.x = 0.5;
-			this.state.lightEmitters.push(torch);
-			this.addChild(torch);
+			new DungeonTorch(this, 40, 25);
+			new DungeonTorch(this, 150, 25);
 		}
 
 		populate() {
@@ -79,28 +73,39 @@ module RogueSide {
 
 			this.game.add.existing(this);
 			state.roomsGroup.add(this);
+			
+			if (this.accessed) this.activate();
 		}
 
-		doorOpened() {
+		activate() {
 			this.accessed = true;
+			this.enableEnemies();
+			this.enableTorches();
+		}
+
+		enableTorches() {
+			for (let i of this.children) {
+				if (i.constructor == DungeonTorch) {
+					//@ts-ignore
+					i.activate();
+				}
+			}
+ 		}
+
+		doorOpened() {
+			this.activate();
 			let room = this.state.roomsMap[this.config.roomY][this.config.roomX - 1];
 			if (room != null) {
-				room.accessed = true;
-				room.enableEnemies();
+				room.activate();
 			}
-
-			this.enableEnemies();
 		}
 
 		ladderTravelled() {
-			this.accessed = true;
+			this.activate();
 			let room = this.state.roomsMap[this.config.roomY - 1][this.config.roomY];
 			if (room != null) {
-				room.accessed = true;
-				room.enableEnemies();
+				room.activate();
 			}
-
-			this.enableEnemies();
 		}
 
 		update() {
