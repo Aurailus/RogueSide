@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"rootDirs": [
+			"source/",
+		],
+		"typeRoots": [
+			"source/types/",
+		],
+		"outFile": "game.js"
+	},
+	"include": [
+		"source/*",
+		"source/**/*"
+	]
+}

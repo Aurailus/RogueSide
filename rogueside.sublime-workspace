@@ -1,0 +1,974 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"light",
+				"lightEmitters\tproperty"
+			],
+			[
+				"alpha",
+				"alphaByte\tlet"
+			],
+			[
+				"blendSourceO",
+				"blendSourceOver\tmethod"
+			],
+			[
+				"blend",
+				"blendDarken\tmethod"
+			],
+			[
+				"acc",
+				"accessedTime\tproperty"
+			],
+			[
+				"mak",
+				"makesnow\tproperty"
+			],
+			[
+				"Ke",
+				"Keyboard\tclass"
+			],
+			[
+				"add",
+				"addKey\tmethod"
+			],
+			[
+				"Parti",
+				"ParticleSnow\tclass"
+			],
+			[
+				"grou",
+				"particleGroup\tproperty"
+			],
+			[
+				"in",
+				"inventory\tproperty"
+			],
+			[
+				"tilePl",
+				"tilePlaceStart\tproperty"
+			],
+			[
+				"tilePla",
+				"tilePlaceMode\tproperty"
+			],
+			[
+				"fore",
+				"foreground\tproperty"
+			],
+			[
+				"obje",
+				"objects\tproperty"
+			],
+			[
+				"getHei",
+				"getHeightInPixels\tmethod"
+			],
+			[
+				"wi",
+				"getWidthInPixels\tmethod"
+			],
+			[
+				"resiz",
+				"resizing\tproperty"
+			],
+			[
+				"obj",
+				"objectDef\tlet"
+			],
+			[
+				"plac",
+				"placemode\tproperty"
+			],
+			[
+				"group",
+				"mapFgGroup\tproperty"
+			],
+			[
+				"objectPlac",
+				"objectPlaceholderRef\tproperty"
+			],
+			[
+				"objectPla",
+				"objectPlaceholderRef\tproperty"
+			],
+			[
+				"objectPlaceHol",
+				"objectPlaceholderTex\tproperty"
+			],
+			[
+				"get",
+				"getTypeFromIndex\tmethod"
+			],
+			[
+				"objec",
+				"ObjectDefs\tclass"
+			],
+			[
+				"Object",
+				"ObjectDefs\tclass"
+			],
+			[
+				"Obj",
+				"ObjectDefs\tclass"
+			],
+			[
+				"Objec",
+				"ObjectDefs\tmodule"
+			],
+			[
+				"velo",
+				"velocityY\tproperty"
+			],
+			[
+				"do",
+				"doubleJump\tproperty"
+			],
+			[
+				"cur",
+				"curr_minute"
+			],
+			[
+				"proj",
+				"projectStart"
+			],
+			[
+				"upda",
+				"update_rpc"
+			],
+			[
+				"key",
+				"key_history"
+			],
+			[
+				"att",
+				"attemptedPass"
+			],
+			[
+				"par",
+				"particleGroup\tproperty"
+			],
+			[
+				"backgr",
+				"background2\tproperty"
+			],
+			[
+				"he",
+				"height\tproperty"
+			],
+			[
+				"In",
+				"InOut\tmethod"
+			],
+			[
+				"con",
+				"console\tvar"
+			],
+			[
+				"Acco",
+				"AccountMenu_UI\tclass"
+			],
+			[
+				"theme-color",
+				"theme-color-light\t stylesheet.scss"
+			],
+			[
+				"theme-col",
+				"theme-color-light\t stylesheet.scss"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "html/source/Game.ts",
+			"settings":
+			{
+				"buffer_size": 950,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "html/source/states/Dungeon.ts",
+			"settings":
+			{
+				"buffer_size": 2852,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "html/source/states/Preloader.ts",
+			"settings":
+			{
+				"buffer_size": 1601,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "html/source/Lighting.ts",
+			"settings":
+			{
+				"buffer_size": 1563,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "html/source/dungeon/DungeonRoom.ts",
+			"settings":
+			{
+				"buffer_size": 2187,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/TypeScript/TypeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Typescript/TypeScript.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/TypeScript/TypeScript.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"type",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"pug",
+				"Set Syntax: Pug"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"pyth\t",
+				"Set Syntax: Python"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"showE",
+				"TypeScript: Show Error List"
+			],
+			[
+				"typescir",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"typescript show",
+				"TypeScript: Show Error List"
+			],
+			[
+				"typescript",
+				"Build With: TypeScript"
+			],
+			[
+				"build",
+				"Build With: TypeScript"
+			],
+			[
+				"reload",
+				"HexViewer: Reload Hex View"
+			],
+			[
+				"hex",
+				"HexViewer: Toggle Hex View"
+			],
+			[
+				"hexviewer",
+				"HexViewer: Set Bytes Per Line"
+			],
+			[
+				"endi",
+				"HexViewer: Toggle Endianness (Big|Little)"
+			],
+			[
+				"endian",
+				"HexViewer: Toggle Endianness (Big|Little)"
+			],
+			[
+				"hexview",
+				"HexViewer: Toggle Hex View"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"add resp",
+				"Package Control: Add Repository"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"ar\t",
+				"Arithmetic"
+			],
+			[
+				"",
+				"Arithmetic"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 196.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/aurailus/Apache/8081/html",
+		"/home/aurailus/Apache/8081/html/source",
+		"/home/aurailus/Apache/8081/html/source/dungeon",
+		"/home/aurailus/Apache/8081/html/source/enemies",
+		"/home/aurailus/Apache/8081/html/source/states"
+	],
+	"file_history":
+	[
+		"/home/aurailus/Documents/Terraden/game/States/Preloader.ts",
+		"/home/aurailus/Documents/Terraden/game/World/Room.ts",
+		"/home/aurailus/Documents/Terraden/game/States/GameWorld.ts",
+		"/home/aurailus/Documents/Terraden/game/States/Boot.ts",
+		"/home/aurailus/Documents/Terraden/game/States/MainMenu.ts",
+		"/home/aurailus/Documents/Terraden/tsconfig.json",
+		"/home/aurailus/Documents/Terraden/views/index.pug",
+		"/home/aurailus/Documents/Terraden/game/World/LevelChunk.ts",
+		"/home/aurailus/Documents/Terraden/bin/www",
+		"/home/aurailus/Documents/Terraden/app.js",
+		"/home/aurailus/Documents/Terraden/game/Game.ts",
+		"/home/aurailus/Documents/Terraden/game/Particle/ParticleSnow.ts",
+		"/home/aurailus/Documents/Terraden/game/GameObjects/ObjectManager.ts",
+		"/home/aurailus/Documents/Terraden/game/World/Player.ts",
+		"/home/aurailus/Documents/Terraden/game/States/Game.ts",
+		"/home/aurailus/Documents/Terraden/.gitignore",
+		"/home/aurailus/Documents/Terraden/config.js",
+		"/home/aurailus/Documents/Terraden/game/GUI/InputManager.ts",
+		"/home/aurailus/Documents/Terraden/game/Boot.ts",
+		"/home/aurailus/Documents/Terraden/game/LevelChunk.ts",
+		"/home/aurailus/Documents/Terraden/game/TileInterpreter.ts",
+		"/home/aurailus/Documents/Terraden/game/GameWorld.ts",
+		"/home/aurailus/Documents/Terraden/game/GameObjects/oScreenBorder.ts",
+		"/home/aurailus/Documents/Terraden/game/Room.ts",
+		"/home/aurailus/Documents/Terraden/game/Preloader.ts",
+		"/home/aurailus/Documents/Terraden/game/AccountMenu.ts",
+		"/home/aurailus/Documents/Terraden/views/game.pug",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oScreenBorder.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oVoid.ts",
+		"/home/aurailus/Documents/Terraden/routes/assets.js",
+		"/home/aurailus/Apache/8080/game/source/Objects.ts",
+		"/home/aurailus/Apache/8080/game/source/Preloader.ts",
+		"/home/aurailus/Apache/8080/game/source/Inventory.ts",
+		"/home/aurailus/Apache/8080/game/source/GameWorld.ts",
+		"/home/aurailus/Apache/8080/game/source/Room.ts",
+		"/home/aurailus/Documents/Terraden/public/stylesheets/game.css",
+		"/home/aurailus/Documents/Terraden/public/stylesheets/index.css",
+		"/home/aurailus/Documents/Terraden/routes/game.js",
+		"/home/aurailus/Documents/Terraden/routes/index.js",
+		"/home/aurailus/Apache/8080/game/source/GameObject.ts",
+		"/home/aurailus/Documents/Terraden/views/error.pug",
+		"/home/aurailus/Documents/Terraden/views/layout.pug",
+		"/home/aurailus/Documents/Terraden/package-lock.json",
+		"/home/aurailus/Documents/Terraden/package.json",
+		"/usr/share/applications/xfce-ui-settings.desktop",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oBallBounce.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oObjectTrader.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oFountain.ts",
+		"/home/aurailus/Apache/8080/game/source/Player.ts",
+		"/home/aurailus/Apache/8080/html/source/Player.ts",
+		"/home/aurailus/Apache/8080/html/source/GameWorld.ts",
+		"/home/aurailus/Apache/8080/html/source/GameObject.ts",
+		"/home/aurailus/Apache/8080/game/source/Boot.ts",
+		"/home/aurailus/Apache/8080/game/source/AccountMenu.ts",
+		"/home/aurailus/Apache/8080/game/source/AccountMenu_UI.ts",
+		"/home/aurailus/Apache/8080/game/source/MainMenu_UI.ts",
+		"/home/aurailus/Apache/8080/html/source/Room.ts",
+		"/home/aurailus/Apache/8080/html/source/Game.ts",
+		"/home/aurailus/Apache/8080/html/source/Inventory.ts",
+		"/home/aurailus/Desktop/drivers.txt",
+		"/home/aurailus/Apache/8080/server/clientman.js",
+		"/home/aurailus/Apache/8080/game/types/socket.io-client.d.ts",
+		"/home/aurailus/Apache/8080/game/types/phaser.d.ts",
+		"/home/aurailus/.config/sublime-text-3/Packages/Emmet/Emmet.sublime-settings",
+		"/home/aurailus/Apache/8080/.gitignore",
+		"/home/aurailus/Apache/8080/html/source/GameObjects/oAirJump.ts",
+		"/home/aurailus/Apache/8080/game/source/ParticleBubble.ts",
+		"/home/aurailus/Apache/8080/game/source/Sparkle.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oExperienceOrb.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oBlockTrader.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oLevelDoor.ts",
+		"/home/aurailus/Apache/8080/game/source/GameObjects/oBenchGirl.ts",
+		"/home/aurailus/Apache/8081/html/index.html",
+		"/home/aurailus/Apache/8080/game/index.html",
+		"/home/aurailus/Apache/8083/html/index.html",
+		"/home/aurailus/Apache/8080/html/source/GameObjects/oBlockStall.ts",
+		"/home/aurailus/Documents/Rich Presence/app.py",
+		"/home/aurailus/Downloads/client/logger.py",
+		"/home/aurailus/Downloads/client/main.py",
+		"/home/aurailus/Downloads/python-discord-rpc-master/keylog.py",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/logger.js",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/clientman.js",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/webserver.js",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/server.js",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/sequelsetup.js",
+		"/home/aurailus/Apache/8080/html/source/AccountMenu_UI.ts",
+		"/home/aurailus/Apache/8080/html/source/AccountMenu.ts",
+		"/home/aurailus/Downloads/python-discord-rpc-master/app.py",
+		"/home/aurailus/Downloads/python-discord-rpc-master/keys.txt",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/levelman.js",
+		"/home/aurailus/Downloads/python-discord-rpc-master/example.py",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/authman.js",
+		"/home/aurailus/Apache/8080/html/index.html",
+		"/home/aurailus/.config/sublime-text-3/Packages/User/SFTP.sublime-settings",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/static/index.html",
+		"/home/aurailus/Apache/8080/html/source/EXPBubble.ts",
+		"/home/aurailus/Apache/8080/html/source/Sparkle.ts",
+		"/home/aurailus/Documents/Websites/Platformer NodeJS/sftp-config.json",
+		"/home/aurailus/Apache/8080/html/source/GameObjects/oCoin.ts",
+		"/home/aurailus/Apache/8080/html/source/GameObjects/oExperienceOrb.ts",
+		"/home/aurailus/Apache/8080/html/source/GameObjects/oRedCoin.ts",
+		"/home/aurailus/Apache/8080/html/test.ts",
+		"/home/aurailus/Apache/8080/html/source/MainMenu_UI.ts",
+		"/home/aurailus/Apache/8080/html/source/Boot.ts",
+		"/home/aurailus/Apache/8080/html/source/Preloader.ts",
+		"/home/aurailus/Apache/8080/html/source/MainMenu.ts",
+		"/home/aurailus/Apache/8080/html/source/game.js",
+		"/home/aurailus/Apache/8081/html/css/stylesheet.scss",
+		"/home/aurailus/Apache/8081/html/index.php",
+		"/home/aurailus/IdeaProjects/Zeus/0-0-0.zr",
+		"/home/aurailus/IdeaProjects/Zeus/chunk_compressed.txt",
+		"/home/aurailus/IdeaProjects/Zeus/chunk.txt",
+		"/home/aurailus/Apache/8081/html/media/phone-hearing.svg",
+		"/home/aurailus/IdeaProjects/Zeus/chunk_rle.txt",
+		"/home/aurailus/IdeaProjects/Zeus/chunk_uncompressed.txt",
+		"/run/user/1000/gvfs/ftp:host=31.220.57.213/root/UHC/server.properties",
+		"/run/user/1000/gvfs/ftp:host=31.220.57.213/root/UHC/ops.json",
+		"/home/aurailus/Apache/8081/html/css/stylesheet.css",
+		"/usr/user-software/intellij/bin/idea.sh",
+		"/home/aurailus/Apache/8081/html/css/.sassbuilder-config.json",
+		"/home/aurailus/Apache/80/html/index.html",
+		"/home/aurailus/Apache/80/html/document.html",
+		"/home/aurailus/Templates/Page.html",
+		"/home/aurailus/Templates/Page.php"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"camera",
+			"empty",
+			"deleteAtPosition",
+			"removeObjec",
+			"> ",
+			"guiGroup.",
+			"deseria",
+			"modifyObject",
+			"mapFgGroup",
+			"14",
+			");\n",
+			"30",
+			"NodeJS",
+			"16",
+			"ObjectDefs",
+			"deserializeObject",
+			"});\n",
+			"12",
+			"tileCheckCol",
+			"testColli",
+			"OnKeyPress",
+			"KeyDown",
+			"seq",
+			"swq",
+			"objectGroup",
+			"world_input",
+			".start",
+			".prompt",
+			"split-info",
+			".prompt",
+			"section",
+			"<h1>",
+			"</h1>",
+			"<h1>",
+			"<p>",
+			"<h1>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<h1><button class=\"hearing\">",
+			"</button></h1>",
+			"<h1><button class=\"hearing\">",
+			"<p><button class=\"hearing\">"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "html/source/Game.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 950,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.ts"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/source/states/Dungeon.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2852,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1727,
+								1727
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.ts"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 780.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "html/source/states/Preloader.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1064,
+								1064
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.ts"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "html/source/Lighting.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								740,
+								740
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.ts"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "html/source/dungeon/DungeonRoom.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.ts"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 859.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.doc":
+	{
+		"height": 124.0
+	},
+	"output.errorlist":
+	{
+		"height": 106.0
+	},
+	"output.exec":
+	{
+		"height": 31.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.hex_viewer_inspector":
+	{
+		"height": 184.0
+	},
+	"output.sftp":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"project": "rogueside.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/web.sublime-project"
+			],
+			[
+				"\\",
+				"~/Documents/terraden.sublime-project"
+			],
+			[
+				"web",
+				"~/Documents/web.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
